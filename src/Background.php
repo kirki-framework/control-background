@@ -15,6 +15,7 @@
 namespace Kirki\Control;
 
 use Kirki\Control\Base;
+use Kirki\Core\Kirki;
 
 /**
  * Adds multiple input fiels that combined make up the background control.
