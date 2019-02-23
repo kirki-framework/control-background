@@ -40,12 +40,12 @@ class Background extends Base {
 
 		$url_color = apply_filters(
 			'kirki_package_url_control_color',
-			trailingslashit( Kirki::$url ) . 'packages/kirki-framework/control-color/src'
+			trailingslashit( Kirki::$url ) . 'vendor/kirki-framework/control-color/src'
 		);
 
 		$url_background = apply_filters(
 			'kirki_package_url_control_background',
-			trailingslashit( Kirki::$url ) . 'packages/kirki-framework/control-background/src'
+			trailingslashit( Kirki::$url ) . 'vendor/kirki-framework/control-background/src'
 		);
 
 		wp_enqueue_script(
