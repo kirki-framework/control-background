@@ -65,7 +65,6 @@ class Background extends Base {
 			'kirki-control-background',
 			"$url_background/assets/scripts/control.js",
 			[
-				'kirki-script',
 				'jquery',
 				'customize-base',
 				'wp-color-picker-alpha'
