@@ -42,7 +42,7 @@ class Background extends Base {
 	 * @since 1.0
 	 * @var string
 	 */
-	private static $control_ver = '1.0';
+	private static $control_ver = '1.0.2';
 
 	/**
 	 * Enqueue control related scripts/styles.
