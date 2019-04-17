@@ -14,9 +14,6 @@
 namespace Kirki\Control;
 
 use Kirki\Control\Composite;
-use Kirki\Control\Color;
-use Kirki\Core\Kirki;
-use Kirki\URL;
 
 /**
  * Adds multiple input fiels that combined make up the background control.
@@ -67,26 +64,36 @@ class Background extends Composite {
 	public function __construct( $manager, $id, $args = [] ) {
 		$this->fields = [
 			[
-				'type'     => 'kirki-color',
-				'settings' => $id . '[background-color]',
-				'label'    => esc_html__( 'Background Color', 'kirki' ),
-				'default'  => isset( $args['default']['background-color'] ) ? $args['default']['background-color'] : '',
-				'choices'  => [
+				'type'        => 'kirki-custom',
+				'settings'    => $id . '[--label-and-description]',
+				'label'       => isset( $args['label'] ) ? $args['label'] : '',
+				'description' => isset( $args['description'] ) ? $args['description'] : '',
+				'default'     => '',
+			],
+			[
+				'type'        => 'kirki-color',
+				'settings'    => $id . '[background-color]',
+				'label'       => '',
+				'description' => esc_html__( 'Background Color', 'kirki' ),
+				'default'     => isset( $args['default']['background-color'] ) ? $args['default']['background-color'] : '',
+				'choices'     => [
 					'alpha' => true,
 				],
 			],
 			[
-				'type'     => 'kirki-image',
-				'settings' => $id . '[background-image]',
-				'label'    => esc_html__( 'Background Image', 'kirki' ),
-				'default'  => isset( $args['default']['background-image'] ) ? $args['default']['background-image'] : '',
+				'type'        => 'kirki-image',
+				'settings'    => $id . '[background-image]',
+				'label'       => '',
+				'description' => esc_html__( 'Background Image', 'kirki' ),
+				'default'     => isset( $args['default']['background-image'] ) ? $args['default']['background-image'] : '',
 			],
 			[
-				'type'            => 'kirki-select',
-				'settings'        => $id . '[background-repeat]',
-				'label'           => esc_html__( 'Background Repeat', 'kirki' ),
-				'default'         => isset( $args['default']['background-repeat'] ) ? $args['default']['background-repeat'] : '',
-				'choices'         => [
+				'type'        => 'kirki-select',
+				'settings'    => $id . '[background-repeat]',
+				'label'       => '',
+				'description' => esc_html__( 'Background Repeat', 'kirki' ),
+				'default'     => isset( $args['default']['background-repeat'] ) ? $args['default']['background-repeat'] : '',
+				'choices'     => [
 					'no-repeat' => esc_html__( 'No Repeat', 'kirki' ),
 					'repeat'    => esc_html__( 'Repeat All', 'kirki' ),
 					'repeat-x'  => esc_html__( 'Repeat Horizontally', 'kirki' ),
@@ -94,11 +101,12 @@ class Background extends Composite {
 				],
 			],
 			[
-				'type'            => 'kirki-select',
-				'settings'        => $id . '[background-position]',
-				'label'           => esc_html__( 'Background Position', 'kirki' ),
-				'default'         => isset( $args['default']['background-position'] ) ? $args['default']['background-position'] : '',
-				'choices'         => [
+				'type'        => 'kirki-select',
+				'settings'    => $id . '[background-position]',
+				'label'       => '',
+				'description' => esc_html__( 'Background Position', 'kirki' ),
+				'default'     => isset( $args['default']['background-position'] ) ? $args['default']['background-position'] : '',
+				'choices'     => [
 					'left top'      => esc_html__( 'Left Top', 'kirki' ),
 					'left center'   => esc_html__( 'Left Center', 'kirki' ),
 					'left bottom'   => esc_html__( 'Left Bottom', 'kirki' ),
@@ -111,22 +119,24 @@ class Background extends Composite {
 				],
 			],
 			[
-				'type'            => 'kirki-radio-buttonset',
-				'settings'        => $id . '[background-size]',
-				'label'           => esc_html__( 'Background Size', 'kirki' ),
-				'default'         => isset( $args['default']['background-size'] ) ? $args['default']['background-size'] : '',
-				'choices'         => [
+				'type'        => 'kirki-radio-buttonset',
+				'settings'    => $id . '[background-size]',
+				'label'       => '',
+				'description' => esc_html__( 'Background Size', 'kirki' ),
+				'default'     => isset( $args['default']['background-size'] ) ? $args['default']['background-size'] : '',
+				'choices'     => [
 					'cover'   => esc_html__( 'Cover', 'kirki' ),
 					'contain' => esc_html__( 'Contain', 'kirki' ),
 					'auto'    => esc_html__( 'Auto', 'kirki' ),
 				],
 			],
 			[
-				'type'            => 'kirki-radio-buttonset',
-				'settings'        => $id . '[background-attachment]',
-				'label'           => esc_html__( 'Background Attachment', 'kirki' ),
-				'default'         => isset( $args['default']['background-attachment'] ) ? $args['default']['background-attachment'] : '',
-				'choices'         => [
+				'type'        => 'kirki-radio-buttonset',
+				'settings'    => $id . '[background-attachment]',
+				'description' => esc_html__( 'Background Attachment', 'kirki' ),
+				'label'       => '',
+				'default'     => isset( $args['default']['background-attachment'] ) ? $args['default']['background-attachment'] : '',
+				'choices'     => [
 					'scroll' => esc_html__( 'Scroll', 'kirki' ),
 					'fixed'  => esc_html__( 'Fixed', 'kirki' ),
 				],
