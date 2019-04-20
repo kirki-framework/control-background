@@ -15,11 +15,9 @@
     ],
     "require": {
         "php": ">=5.6",
-        "kirki-framework/control-base": "*",
         "kirki-framework/control-color": "*",
         "kirki-framework/control-select": "*",
-        "kirki-framework/control-radio": "*",
-        "kirki-framework/control-composite": "*"
+        "kirki-framework/control-radio": "*"
     },
     "autoload": {
 		"psr-4": {
