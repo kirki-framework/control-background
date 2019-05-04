@@ -31,7 +31,7 @@ class Background extends Field {
 	public function init( $args ) {
 
 		$args['required'] = isset( $args['required'] ) ? (array) $args['required'] : [];
-		$config_id        = isset( $args['config_id'] ) ? $args['config_id'] : 'global';
+		$config_id        = isset( $args['kirki_config'] ) ? $args['kirki_config'] : 'global';
 		/**
 		 * Add a hidden field, the label & description.
 		 */
